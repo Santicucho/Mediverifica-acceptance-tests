@@ -1,0 +1,13 @@
+{
+  "name": "mediverifica-acceptance-tests",
+  "version": "1.0.0",
+  "description": "Pruebas de aceptación en Gherkin del proyecto MediVerifica (Verifica Salud)",
+  "private": true,
+  "scripts": {
+    "validar": "node validar.js"
+  },
+  "devDependencies": {
+    "@cucumber/gherkin": "^43.0.0",
+    "@cucumber/messages": "^35.0.0"
+  }
+}
