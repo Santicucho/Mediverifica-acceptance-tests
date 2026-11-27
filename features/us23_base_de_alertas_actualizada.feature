@@ -17,7 +17,13 @@ Característica: US23 Base de alertas actualizada
       | 12    | K8812  |
       | 24    | PX0042 |
 
-  Escenario: Fallo de actualización
-    Dado que la última actualización de la base de alertas falló
+  Esquema del escenario: Fallo de actualización
+    Dado que la última actualización exitosa de la base de alertas fue el <fecha>
+    Y la actualización siguiente falló
     Cuando el dueño de botica realiza una consulta
-    Entonces el dueño de botica ve el resultado con la etiqueta "Datos actualizados al" y la fecha de la última actualización exitosa
+    Entonces el dueño de botica ve el resultado con la etiqueta "Datos actualizados al <fecha>"
+
+    Ejemplos:
+      | fecha            |
+      | 25/11/2026 08:00 |
+      | 24/11/2026 20:00 |

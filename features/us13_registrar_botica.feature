@@ -17,7 +17,13 @@ Característica: US13 Registrar botica
       | 20601234    | El RUC debe tener 11 dígitos                |
       | 20601234567 | Este RUC ya tiene una cuenta. Inicia sesión |
 
-  Escenario: Ingreso después del registro
-    Dado que el dueño de botica ve el mensaje "Tu botica fue registrada"
+  Esquema del escenario: Ingreso después del registro
+    Dado que el dueño de botica registró la botica "<botica>" con el RUC "<ruc>"
+    Y el dueño de botica ve el mensaje "Tu botica fue registrada"
     Cuando el dueño de botica selecciona "Ir a Mi botica"
-    Entonces el sistema muestra la pantalla "Mi botica"
+    Entonces el sistema muestra la pantalla "Mi botica" con el nombre "<botica>"
+
+    Ejemplos:
+      | botica            | ruc         |
+      | Botica San Martín | 20609876543 |
+      | Botica Santa Rosa | 20611122233 |

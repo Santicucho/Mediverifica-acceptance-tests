@@ -15,7 +15,12 @@ Característica: US26 Compartir el resultado
       | Paracetamol 500 mg | Sin alertas registradas |
       | Apronax 550 mg     | Lote con alerta         |
 
-  Escenario: Resultado con alerta
-    Dado que el sistema muestra el resultado "Lote con alerta"
+  Esquema del escenario: Resultado con alerta
+    Dado que el sistema muestra el resultado "Lote con alerta" del lote "<lote>"
     Cuando el consumidor selecciona "Compartir"
-    Entonces el mensaje incluye el número de alerta y el enlace a la publicación de DIGEMID
+    Entonces el mensaje incluye el número de alerta "<alerta>" y el enlace a la publicación de DIGEMID
+
+    Ejemplos:
+      | lote   | alerta      |
+      | ABC123 | N.° 45-2026 |
+      | L2309  | N.° 38-2026 |

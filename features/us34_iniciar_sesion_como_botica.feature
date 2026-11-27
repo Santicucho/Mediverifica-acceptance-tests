@@ -16,7 +16,12 @@ Característica: US34 Iniciar sesión como botica
       | botica@correo.com | otraClave   | Correo o contraseña incorrectos    |
       | otro@correo.com   | Segura#2026 | Correo o contraseña incorrectos    |
 
-  Escenario: Bloqueo temporal
-    Dado que se ingresó 5 veces seguidas una contraseña incorrecta
-    Cuando el dueño de botica intenta iniciar sesión otra vez
+  Esquema del escenario: Bloqueo temporal
+    Dado que se ingresó 5 veces seguidas una contraseña incorrecta para el correo "botica@correo.com"
+    Cuando el dueño de botica intenta iniciar sesión otra vez con la contraseña "<clave>"
     Entonces el sistema bloquea el inicio de sesión durante 15 minutos
+
+    Ejemplos:
+      | clave       |
+      | Segura#2026 |
+      | otraClave   |

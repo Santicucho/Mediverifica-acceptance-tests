@@ -9,7 +9,13 @@ Característica: US22 Uso anónimo de la aplicación
   Escenario: Uso sin cuenta
     Dado que el ciudadano abre MediVerifica por primera vez
     Cuando el ciudadano empieza a usar la aplicación
-    Entonces la aplicación no le pide al ciudadano crear una cuenta ni ingresar su nombre, DNI, correo o teléfono
+    Entonces la aplicación no le pide al ciudadano crear una cuenta
+    Y la aplicación no le pide al ciudadano ninguno de estos datos:
+      | dato     |
+      | nombre   |
+      | DNI      |
+      | correo   |
+      | teléfono |
 
   Esquema del escenario: Envío sin identificadores
     Dado que el ciudadano usa MediVerifica
@@ -26,7 +32,13 @@ Característica: US22 Uso anónimo de la aplicación
       | un reporte de producto        |
       | un reporte de establecimiento |
 
-  Escenario: Transmisión cifrada
+  Esquema del escenario: Transmisión cifrada
     Dado que el ciudadano usa MediVerifica
-    Cuando la información del ciudadano viaja al servidor
+    Cuando la aplicación del ciudadano envía <solicitud> al servidor
     Entonces la conexión usa HTTPS con TLS 1.2 o superior
+
+    Ejemplos:
+      | solicitud                     |
+      | una consulta por lote         |
+      | un reporte de producto        |
+      | un reporte de establecimiento |

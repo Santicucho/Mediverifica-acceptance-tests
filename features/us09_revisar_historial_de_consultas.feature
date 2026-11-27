@@ -16,12 +16,22 @@ Característica: US09 Revisar historial de consultas
       | 20        | 20        |
       | 35        | 20        |
 
-  Escenario: Historial vacío
-    Dado que el consumidor no ha realizado consultas en el dispositivo
+  Esquema del escenario: Historial vacío
+    Dado que el consumidor <situación> y no tiene consultas guardadas en el dispositivo
     Cuando el consumidor abre "Historial"
     Entonces el sistema muestra el mensaje "Aún no tienes consultas"
 
-  Escenario: Borrado del historial
-    Dado que el consumidor se encuentra en "Historial"
+    Ejemplos:
+      | situación                          |
+      | acaba de instalar la aplicación    |
+      | borró su historial el día anterior |
+
+  Esquema del escenario: Borrado del historial
+    Dado que el consumidor tiene <consultas> consultas en "Historial"
     Cuando el consumidor selecciona "Borrar historial" y confirma la acción
-    Entonces el sistema elimina las consultas guardadas en el dispositivo
+    Entonces el sistema elimina las <consultas> consultas guardadas en el dispositivo
+
+    Ejemplos:
+      | consultas |
+      | 1         |
+      | 20        |

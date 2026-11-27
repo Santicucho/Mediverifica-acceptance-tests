@@ -14,8 +14,13 @@ Característica: US28 Ver alertas recientes
     Cuando el consumidor abre "Alertas recientes"
     Entonces el sistema muestra las alertas en este orden: "N.° 45-2026", "N.° 44-2026" y "N.° 41-2026", con el producto, el número de alerta y la fecha
 
-  Escenario: Sin alertas recientes
-    Dado que no se publicaron alertas en los últimos 30 días
+  Esquema del escenario: Sin alertas recientes
+    Dado que la última alerta publicada por DIGEMID tiene <días> días de antigüedad
     Cuando el consumidor abre "Alertas recientes"
     Entonces el sistema muestra el mensaje "No hay alertas nuevas en los últimos 30 días"
     Y el sistema muestra la opción "Ver alertas anteriores"
+
+    Ejemplos:
+      | días |
+      | 31   |
+      | 60   |

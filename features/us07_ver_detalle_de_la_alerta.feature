@@ -16,13 +16,23 @@ Característica: US07 Ver detalle de la alerta
       | ABC123 | N.° 45-2026 | 12/09/2026 | producto falsificado |
       | L2309  | N.° 38-2026 | 03/09/2026 | falla de calidad     |
 
-  Escenario: Fuente oficial
-    Dado que el consumidor se encuentra en el detalle de una alerta
+  Esquema del escenario: Fuente oficial
+    Dado que el consumidor se encuentra en el detalle de la alerta "<alerta>"
     Cuando el consumidor selecciona "Ver publicación de DIGEMID"
-    Entonces el sistema abre la publicación oficial de la alerta en el navegador del dispositivo
+    Entonces el sistema abre la publicación oficial de la alerta "<alerta>" en el navegador del dispositivo
 
-  Escenario: Publicación no disponible
-    Dado que la página de la publicación oficial no responde
+    Ejemplos:
+      | alerta      |
+      | N.° 45-2026 |
+      | N.° 38-2026 |
+
+  Esquema del escenario: Publicación no disponible
+    Dado que la página de la publicación oficial <falla>
     Cuando el consumidor selecciona "Ver publicación de DIGEMID"
     Entonces el sistema muestra el mensaje "La página de DIGEMID no está disponible. Intenta más tarde"
     Y el detalle de la alerta sigue visible
+
+    Ejemplos:
+      | falla                              |
+      | responde con un error del servidor |
+      | no responde después de 10 segundos |

@@ -17,8 +17,14 @@ Característica: US33 Dar acceso a los empleados de la botica
       | marta.rojas@correo.com |
 
   Escenario: Límite de empleados
-    Dado que la botica del dueño tiene 5 empleados con acceso
-    Cuando el dueño de botica invita a un nuevo empleado
+    Dado que la botica del dueño tiene los siguientes 5 empleados con acceso:
+      | empleado | correo                 |
+      | Luis     | luis.perez@correo.com  |
+      | Marta    | marta.rojas@correo.com |
+      | Ana      | ana.torres@correo.com  |
+      | Jorge    | jorge.vega@correo.com  |
+      | Rosa     | rosa.medina@correo.com |
+    Cuando el dueño de botica invita al correo "pedro.diaz@correo.com"
     Entonces el dueño de botica ve el mensaje "Tu cuenta permite hasta 5 empleados"
 
   Esquema del escenario: Acceso retirado

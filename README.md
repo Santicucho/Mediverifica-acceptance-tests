@@ -3,7 +3,7 @@
 Pruebas de aceptación del proyecto **MediVerifica** (startup Verifica Salud), curso 1ASI0786 Ingeniería de Requisitos.
 Están escritas en **Gherkin en español** (Dado / Cuando / Entonces) a partir de las historias de usuario y los criterios de aceptación del informe.
 
-- **21 archivos `.feature`** con **49 escenarios**.
+- **21 archivos `.feature`** con **49 escenarios**. Todos los escenarios tienen datos de prueba (108 casos al ejecutarse).
 - Cubren las épicas de core business **EP01** (verificación de medicamentos) y **EP03** (alertas para boticas) y las **4 historias no funcionales** de mayor prioridad (US05, US23, US22 y US21).
 
 ## Cómo abrirlo en Visual Studio Code
@@ -34,6 +34,7 @@ Cada archivo empieza con `# language: es` y con etiquetas que indican la épica 
 - **Característica:** la historia de usuario en formato *Como… quiero… para…*
 - **Escenario:** un criterio de aceptación, con un solo comportamiento.
 - **Esquema del escenario + Ejemplos:** el mismo comportamiento probado con varios datos (tabla de ejemplos).
+- **Data table dentro de un paso:** datos de partida que el escenario necesita, por ejemplo la lista de retiros de una botica.
 - **Dado** describe el estado inicial, **Cuando** la acción del actor y **Entonces** el resultado esperado.
 
 Cada escenario lo vive el mismo actor de la historia, por ejemplo el consumidor o el dueño de botica, y usa los mismos mensajes y datos definidos en los criterios de aceptación del informe.

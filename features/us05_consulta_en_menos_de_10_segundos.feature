@@ -17,7 +17,13 @@ Característica: US05 Consulta en menos de 10 segundos
       | 4G       | código de barras |
       | wifi     | nombre           |
 
-  Escenario: Celular sin conexión
+  Esquema del escenario: Celular sin conexión
     Dado que el celular del consumidor no tiene conexión a internet
-    Cuando el consumidor realiza una consulta
+    Cuando el consumidor realiza una consulta por <tipo>
     Entonces el consumidor ve el mensaje "Sin conexión. Revisa tu internet" en menos de 3 segundos
+
+    Ejemplos:
+      | tipo             |
+      | número de lote   |
+      | código de barras |
+      | nombre           |

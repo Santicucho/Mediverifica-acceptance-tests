@@ -18,12 +18,20 @@ Característica: US32 Registrar lotes retirados
       | L2310 | 30       |
 
   Escenario: Descarga de la constancia
-    Dado que la botica tiene retiros registrados
+    Dado que la botica tiene los siguientes retiros registrados:
+      | lote  | cantidad | fecha      |
+      | L2309 | 12       | 20/11/2026 |
+      | L2310 | 30       | 22/11/2026 |
     Cuando el dueño de botica selecciona "Descargar constancia"
-    Entonces el sistema genera un PDF con los lotes retirados, las cantidades y las fechas
+    Entonces el sistema genera un PDF con los lotes "L2309" y "L2310", sus cantidades y sus fechas
 
-  Escenario: Cantidad inválida
+  Esquema del escenario: Cantidad inválida
     Dado que el dueño de botica se encuentra en "Registrar retiro"
-    Cuando el dueño de botica ingresa una cantidad igual a 0
+    Cuando el dueño de botica ingresa la cantidad "<cantidad>"
     Entonces el sistema muestra el mensaje "Ingresa una cantidad mayor que 0"
     Y el sistema no guarda el retiro
+
+    Ejemplos:
+      | cantidad |
+      | 0        |
+      | -3       |

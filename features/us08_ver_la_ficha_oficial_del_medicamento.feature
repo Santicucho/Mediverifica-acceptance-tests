@@ -18,12 +18,22 @@ Característica: US08 Ver la ficha oficial del medicamento
       | Paracetamol 500 mg | Paracetamol       | 500 mg        | Tableta            | Sin receta médica |
       | Amoxicilina 500 mg | Amoxicilina       | 500 mg        | Cápsula            | Con receta médica |
 
-  Escenario: Venta con receta
-    Dado que el producto consultado tiene la condición de venta "Con receta médica"
+  Esquema del escenario: Venta con receta
+    Dado que el producto consultado "<producto>" tiene la condición de venta "Con receta médica"
     Cuando el consumidor abre la ficha del medicamento
     Entonces el consumidor ve el aviso "Este medicamento se vende solo con receta médica"
 
-  Escenario: Producto sin ficha
-    Dado que el producto consultado no figura en la base de registros sanitarios
+    Ejemplos:
+      | producto           |
+      | Losartán 50 mg     |
+      | Amoxicilina 500 mg |
+
+  Esquema del escenario: Producto sin ficha
+    Dado que el producto consultado "<producto>" no figura en la base de registros sanitarios
     Cuando el consumidor selecciona "Ficha del medicamento"
     Entonces el consumidor ve el mensaje "No encontramos la ficha oficial de este producto"
+
+    Ejemplos:
+      | producto              |
+      | Ibuprofeno Max 800 mg |
+      | Vitamina C Plus 1 g   |

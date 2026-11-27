@@ -19,10 +19,17 @@ Característica: US04 Recibir notificación de nuevas alertas
 
   Escenario: Notificaciones desactivadas
     Dado que el dueño de botica tiene las notificaciones desactivadas
-    Cuando se registra una nueva alerta en MediVerifica
+    Cuando se registra en MediVerifica la siguiente alerta:
+      | alerta      | lote  | producto       |
+      | N.° 45-2026 | L2309 | Apronax 550 mg |
     Entonces el dueño de botica no recibe ninguna notificación
 
-  Escenario: Apertura de la notificación
-    Dado que el dueño de botica recibió una notificación de alerta
+  Esquema del escenario: Apertura de la notificación
+    Dado que el dueño de botica recibió la notificación de la alerta "<alerta>"
     Cuando el dueño de botica selecciona la notificación
-    Entonces el dueño de botica ve el detalle de la alerta en MediVerifica
+    Entonces el dueño de botica ve en MediVerifica el detalle de la alerta "<alerta>" del producto "<producto>"
+
+    Ejemplos:
+      | alerta      | producto          |
+      | N.° 45-2026 | Apronax 550 mg    |
+      | N.° 46-2026 | Cefalexina 500 mg |
